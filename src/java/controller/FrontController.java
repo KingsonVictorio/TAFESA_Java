@@ -118,7 +118,7 @@ public class FrontController extends HttpServlet {
             // Redirect to the checkout page
             nextPage = "/jsp/checkout.jsp";
             this.dispatch(request, response, nextPage);
-        } else if (requestedAction.equals("Continue")) {
+        } else if (requestedAction.equals("continue")) { //chaged from Continue
             // Redirect to the titles page
             nextPage = "/jsp/titles.jsp";
             this.dispatch(request, response, nextPage);
