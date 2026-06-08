@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,28 +24,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%
-                        Map items = (Map) session.getAttribute("cart");
-                        Set entries = items.entrySet();
-                        Iterator iter = entries.iterator();
-                        double totalCostOfOrder = 0.00;
-                        Book book = null;
-                        CartItem item = null;
+                    <c:set var="totalCostOfOrder" value="0.0" />
 
-                        while (iter.hasNext()) {
-                            Map.Entry entry = (Map.Entry) iter.next();
-                            item = (CartItem) entry.getValue();
-                            double cost = item.getOrderCost();
-                            totalCostOfOrder += cost;
-                    %>
+                    <c:forEach var="entry" items="${sessionScope.cart}">
+                        <c:set var="item" value="${entry.value}" />
+                        <c:set var="totalCostOfOrder"
+                               value="${totalCostOfOrder + item.orderCost}" />
+
+                        <tr>
+                            <td>${item}</td>
+                        </tr>
+                    </c:forEach>
+
                     <tr>
-                        <td><%= item%></td>
+                        <td>
+                            <fmt:formatNumber value="${totalCostOfOrder}" pattern="0.00" />
+                        </td>
                     </tr>
-                    <%
-                        } // end while
-                        DecimalFormat dollars = new DecimalFormat("0.00");
-                        String totalOrderInDollars = dollars.format(totalCostOfOrder);
-                    %>
                 </tbody>
             </table>
 
@@ -90,7 +87,7 @@
                 </tr>
                 <tr>
                     <td>Order Amount $</td>
-                    <td><input type="text" name="amount" value="<%= totalOrderInDollars%>"></td>
+                    <td><input type="text" name="amount" value="${totalOrderInDollars}"></td>
                 </tr>
             </table>
 
