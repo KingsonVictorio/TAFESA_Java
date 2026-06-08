@@ -41,6 +41,13 @@ public class FrontController extends HttpServlet {
         // Additional initialization code can be added here
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -64,7 +71,7 @@ public class FrontController extends HttpServlet {
             ex.printStackTrace();
             throw new ServletException(ex);
         } finally {
-            this.dispatch(request, response, next_page);
+            response.sendRedirect(next_page);
         }
     }
 
