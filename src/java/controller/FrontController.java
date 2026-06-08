@@ -42,7 +42,8 @@ public class FrontController extends HttpServlet {
     }
 
     /**
-     *
+     *Processes incoming HTTP requests and delegates execution to the appropriate dispatcher
+     * based on the provided "action" parameter.
      * @param request
      * @param response
      * @throws ServletException
