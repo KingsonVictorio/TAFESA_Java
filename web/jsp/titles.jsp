@@ -1,5 +1,6 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page import="model.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
@@ -13,7 +14,7 @@
     </head>
 
     <body>
-
+<%@ include file="header.jsp" %>
         <h1>Items in your Shopping Cart</h1>
         <table>
             <thead>
@@ -76,7 +77,7 @@
                     <td>${book.isbn}</td>
                     <td>${book.title}</td>
                     <td>${book.author}</td>
-                    <td>${book.dollarPrice}</td>
+                    <td>$ <fmt:formatNumber value="${book.price}" pattern = "0.00"/></td>
 
                     <td>
                         <select name="${book.isbn}" size="1">
@@ -104,6 +105,6 @@
 <div class="link-container">
     <p><a href="./books?action=view_cart">View Shopping Cart</a></p>
 </div>
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>

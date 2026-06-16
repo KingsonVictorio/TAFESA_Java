@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Tbooks.findByTitle", query = "SELECT t FROM Tbooks t WHERE t.title = :title"),
     @NamedQuery(name = "Tbooks.findByAuthor", query = "SELECT t FROM Tbooks t WHERE t.author = :author"),
     @NamedQuery(name = "Tbooks.findByPrice", query = "SELECT t FROM Tbooks t WHERE t.price = :price")})
+    
 public class Tbooks implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -115,7 +116,7 @@ public class Tbooks implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Tbooks[ isbn=" + isbn + " ]";
+        return title + " (" + isbn + ")";
     }
     
 }

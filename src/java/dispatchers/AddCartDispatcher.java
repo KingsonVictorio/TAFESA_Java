@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import model.Book;
 import model.CartItem;
+import model.Tbooks;
 import utility.AdmitBookStoreDAO;
 import utility.BookHelper;
 
@@ -44,7 +45,7 @@ public class AddCartDispatcher implements IDispatcher {
 
                 int quantity = Integer.parseInt(request.getParameter(isbn));
 
-                Book book = BookHelper.getBookFromList(isbn, session);
+                Tbooks book = BookHelper.getBookFromList(isbn, session);
 
                 if (book == null) continue;
 

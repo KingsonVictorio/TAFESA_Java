@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+        <%@ include file="header.jsp" %>
         <h2>Online Bookstore</h2>
         <hr>
         <h3>Thank you for shopping with us.</h3>

@@ -8,6 +8,7 @@ package utility;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import model.Book;
+import model.Tbooks;
 
 /**
  * Utility class that provides helper methods for working with Book objects
@@ -30,15 +31,15 @@ public class BookHelper {
      * @param session
      * @return
      */
-    public static Book getBookFromList(String isbn, HttpSession session) {
+    public static Tbooks getBookFromList(String isbn, HttpSession session) {
 
-        List<Book> list = (List<Book>) session.getAttribute("books");
+        List<Tbooks> list = (List<Tbooks>) session.getAttribute("books");
 
         if (list == null) {
             return null;
         }
 
-        for (Book book : list) {
+        for (Tbooks book : list) {
             if (isbn.equals(book.getIsbn())) {
                 return book;
             }

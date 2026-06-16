@@ -37,8 +37,8 @@
                     </c:forEach>
 
                     <tr>
-                        <td>
-                            <fmt:formatNumber value="${totalCostOfOrder}" pattern="0.00" />
+                        <td> $
+                            <fmt:formatNumber value="${totalCostOfOrder}" pattern="0.00"/>
                         </td>
                     </tr>
                 </tbody>

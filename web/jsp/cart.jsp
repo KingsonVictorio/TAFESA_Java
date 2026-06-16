@@ -42,7 +42,7 @@
                         <tr>
                             <td>${isbn}</td>
                             <td>${book.title}</td>
-                            <td>${book.dollarPrice}</td>
+                            <td>$ <fmt:formatNumber value="${book.price}" pattern ="0.00"/>
 
                             <td>
                                 <input type="text"

@@ -11,15 +11,26 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import model.Book;
 import model.CartItem;
+import model.Tbooks;
 import utility.AdmitBookStoreDAO;
 
 /**
  * FrontController class to handle HTTP requests and responses.
  */
 public class FrontController extends HttpServlet {
+    @PersistenceContext(unitName = "BookShopPU")
+    private EntityManager em;
+    @Resource
+    private javax.transaction.UserTransaction utx;
 
+    
     private final HashMap actions = new HashMap();
 
     /**
@@ -59,6 +70,11 @@ public class FrontController extends HttpServlet {
         // GET THE action parameter to determine what action is required
         String action = request.getParameter("action");
 
+        if (session.getAttribute("books") == null){
+            List<Tbooks> books = em.createNamedQuery("Tbooks.findAll", Tbooks.class).getResultList();;
+            session.setAttribute("books", books);
+        }
+        
         if (action == null) {
             action = "";
         }
@@ -72,7 +88,7 @@ public class FrontController extends HttpServlet {
             ex.printStackTrace();
             throw new ServletException(ex);
         } finally {
-            response.sendRedirect(next_page);
+            request.getRequestDispatcher(next_page).forward(request, response);
         }
     }
 
@@ -144,5 +160,20 @@ public class FrontController extends HttpServlet {
      */
     public String getServletInfo() {
         return "controller.FrontController Information";
+    }
+
+    /**
+     *Persists the given entity object into the database within a managed transaction.
+     * @param object
+     */
+    public void persist(Object object) {
+        try {
+            utx.begin();
+            em.persist(object);
+            utx.commit();
+        } catch (Exception e) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
+            throw new RuntimeException(e);
+        }
     }
 }

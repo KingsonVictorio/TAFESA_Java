@@ -13,7 +13,9 @@ import model.CartItem;
 import utility.AdmitBookStoreDAO;
 
 /**
- * Handles cases where no action is specified. It acts as a fallback to prevent errors when an empty request parameter is received.
+ * Handles cases where no action is specified. It acts as a fallback to prevent
+ * errors when an empty request parameter is received.
+ *
  * @author kings
  */
 public class NullDispatcher implements IDispatcher {
@@ -30,10 +32,6 @@ public class NullDispatcher implements IDispatcher {
         HttpSession session = request.getSession(true);
 
         try {
-            List<Book> books = dao.getAllBooks();
-
-            session.setAttribute("books", books);
-
             return "/jsp/titles.jsp";
 
         } catch (Exception ex) {
