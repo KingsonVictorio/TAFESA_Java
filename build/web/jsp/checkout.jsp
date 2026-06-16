@@ -87,7 +87,7 @@
                 </tr>
                 <tr>
                     <td>Order Amount $</td>
-                    <td><input type="text" name="amount" value="${totalOrderInDollars}"></td>
+                    <td><input type="text" name="amount" value="${totalCostOfOrder}"></td>
                 </tr>
             </table>
 

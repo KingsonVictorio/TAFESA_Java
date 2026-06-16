@@ -4,20 +4,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/footer.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/css/style.css</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/header.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/src/java/model/Book.java</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/index.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/cart.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/thankyou.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/src/java/model/CartItem.java</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/error.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/final.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/checkout.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/web/jsp/titles.jsp</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/src/java/controller/FrontController.java</file>
-            <file>file:/C:/Users/HillenbrandS/Downloads/BookShop/src/java/utility/AdmitBookStoreDAO.java</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/error.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/src/java/utility/BookHelper.java</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/checkout.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/src/java/model/Book.java</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/index.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/src/java/model/CartItem.java</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/titles.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/src/java/controller/FrontController.java</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/thankyou.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/cart.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/final.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/web/jsp/footer.jsp</file>
+            <file>file:/C:/Diploma/Java/BookShop/src/java/utility/AdmitBookStoreDAO.java</file>
         </group>
     </open-files>
 </project-private>
